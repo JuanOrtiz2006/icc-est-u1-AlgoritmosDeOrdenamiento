@@ -5,6 +5,7 @@ public class App {
         MetodoBurbuja metodoBurbuja = new MetodoBurbuja();
         MetodoSeleccion metodoSeleccion = new MetodoSeleccion();
         MetodoInsercion metodoInsercion = new MetodoInsercion();
+        MetodoBurbujaMejorado metodoBurbujaMejorado = new MetodoBurbujaMejorado();
         Scanner leer = new Scanner(System.in);
 
         boolean condicion = true;
@@ -35,45 +36,49 @@ public class App {
                 switch (opcion) {
                     case 1:
                         System.out.println("--------------------------Método Burbuja----------------------------");
+                        resultados = metodoBurbuja.ordenar(arreglo, descendente);
                         if (pasos) {
                             metodoBurbuja.conPasos(arreglo, descendente);
                         } else {
-                            resultados = metodoBurbuja.BurbujaMejorado(arreglo);
                             System.out.println("Arreglo ordenado -> ");
                             metodoBurbuja.imprimirArray(arreglo);
-                            System.out.println("Comparaciones Totales -> " + resultados[0]);
-                            System.out.println("Cambios Totales -> " + resultados[1]);
                         }
+                        System.out.println("Cambios Totales -> " + resultados[1]);
+                        System.out.println("Comparaciones Totales -> " + resultados[0]);
                         break;
                     case 2:
                         System.out.println("--------------------------Método Selección----------------------------");
+                        resultados = metodoSeleccion.ordenar(arreglo, descendente);
                         if (pasos) {
                             metodoSeleccion.pasos(arreglo, descendente);
                         } else {
-                            resultados = metodoSeleccion.ordenar(arreglo, descendente);
                             System.out.println("Arreglo ordenado -> ");
                             metodoSeleccion.imprimirArray(arreglo);
-                            System.out.println("Comparaciones Totales -> " + resultados[0]);
-                            System.out.println("Cambios Totales -> " + resultados[1]);
                         }
+                        System.out.println("Cambios Totales -> " + resultados[1]);
+                        System.out.println("Comparaciones Totales -> " + resultados[0]);
                         break;
                     case 3:
                         System.out.println("--------------------------Método Inserción----------------------------");
+                        resultados = metodoInsercion.ordenar(arreglo, descendente);
                         if (pasos) {
                             metodoInsercion.pasos(arreglo, descendente);
                         } else {
-                            resultados = metodoInsercion.ordenar(arreglo, descendente);
                             System.out.println("Arreglo ordenado -> ");
                             metodoInsercion.imprimirArray(arreglo);
-                            System.out.println("Comparaciones Totales -> " + resultados[0]);
-                            System.out.println("Cambios Totales -> " + resultados[1]);
                         }
+                        System.out.println("Cambios Totales -> " + resultados[1]);
+                        System.out.println("Comparaciones Totales -> " + resultados[0]);
                         break;
                     case 4:
-                        System.out.println("--------------------------Burbuja Mejorado----------------------------");
-                        resultados = metodoBurbuja.BurbujaMejorado(arreglo);
-                        System.out.println("Arreglo ordenado -> ");
-                        metodoBurbuja.imprimirArray(arreglo);
+                        System.out.println("--------------------------Método Burbuja Mejorado----------------------------");
+                        resultados = metodoBurbujaMejorado.ordenar(arreglo, descendente);
+                        if (pasos) {
+                            metodoBurbujaMejorado.conPasos(arreglo, descendente);
+                        } else {
+                            System.out.println("Arreglo ordenado -> ");
+                            metodoInsercion.imprimirArray(arreglo);
+                        }
                         System.out.println("Comparaciones Totales -> " + resultados[0]);
                         System.out.println("Cambios Totales -> " + resultados[1]);
                         break;
