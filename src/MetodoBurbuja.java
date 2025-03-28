@@ -13,10 +13,10 @@ public class MetodoBurbuja {
                     array[j] = array[i];
                     array[i] = aux;
                     cambios++;
-                    imprimirArray(array); // Mostrar el estado actual del arreglo
                 }
             }
         }
+        imprimirArray(array); // Mostrar el estado actual del arreglo
         return new int[]{comparacion, cambios};
     }
 
